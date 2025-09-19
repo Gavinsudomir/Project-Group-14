@@ -1,0 +1,27 @@
+/* Custom styles for BamaEatz Recipe Builder */
+body {
+    background-color: #f8f9fa;
+}
+
+.banner {
+    background: linear-gradient(135deg, #c8102e 0%, #ffd700 100%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.menu-card {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
