@@ -69,6 +69,7 @@ function showAddIngredients() {
     const app = document.getElementById('app');
     app.innerHTML = createAddIngredientsPage();
     setupIngredientsEventListeners();
+    loadIngredientsFromStorage(); // Load saved ingredients when page opens
 }
 
 function createAddIngredientsPage() {
@@ -86,8 +87,11 @@ function createAddIngredientsPage() {
             <div class="row mb-4">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">Add New Ingredient</h5>
+                            <button class="btn btn-sm btn-outline-info" onclick="viewRawData()">
+                                🔍 View Raw Data
+                            </button>
                         </div>
                         <div class="card-body">
                             <form id="ingredientForm">
@@ -423,6 +427,66 @@ function setupBudgetingEventListeners() {
 }
 
 // Supporting functions for all pages
+
+// Local Storage functions for ingredients
+function saveIngredientsToStorage() {
+    const ingredients = [];
+    const tbody = document.getElementById('ingredientsTableBody');
+    const rows = tbody.querySelectorAll('tr');
+    
+    rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 4) { // Only process actual ingredient rows, not "No ingredients" message
+            const name = cells[0].textContent;
+            const price = cells[1].textContent.replace('$', '');
+            const unit = cells[2].textContent;
+            
+            ingredients.push({ name, price, unit });
+        }
+    });
+    
+    localStorage.setItem('bamaeatz_ingredients', JSON.stringify(ingredients));
+}
+
+function loadIngredientsFromStorage() {
+    const savedIngredients = localStorage.getItem('bamaeatz_ingredients');
+    if (savedIngredients) {
+        const ingredients = JSON.parse(savedIngredients);
+        const tbody = document.getElementById('ingredientsTableBody');
+        
+        if (ingredients.length > 0) {
+            tbody.innerHTML = ''; // Clear the "No ingredients" message
+            
+            ingredients.forEach(ingredient => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${ingredient.name}</td>
+                    <td>$${ingredient.price}</td>
+                    <td>${ingredient.unit}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-danger" onclick="removeIngredient(this)">Remove</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    }
+}
+
+// Debug function to view raw localStorage data
+function viewRawData() {
+    const rawData = localStorage.getItem('bamaeatz_ingredients');
+    console.log('Raw localStorage data:', rawData);
+    console.log('Parsed data:', JSON.parse(rawData || '[]'));
+    
+    // Also show in an alert for easy viewing
+    if (rawData) {
+        alert('Raw Data:\n' + rawData + '\n\nParsed Data:\n' + JSON.stringify(JSON.parse(rawData), null, 2));
+    } else {
+        alert('No ingredients data found in localStorage');
+    }
+}
+
 function addIngredient() {
     const name = document.getElementById('ingredientName').value;
     const price = document.getElementById('ingredientPrice').value;
@@ -445,6 +509,9 @@ function addIngredient() {
         `;
         tbody.appendChild(row);
         
+        // Save to localStorage
+        saveIngredientsToStorage();
+        
         // Clear form
         document.getElementById('ingredientForm').reset();
     }
@@ -456,6 +523,9 @@ function removeIngredient(button) {
     if (tbody.children.length === 0) {
         tbody.innerHTML = '<tr><td colspan="4" class="text-center text-muted">No ingredients added yet</td></tr>';
     }
+    
+    // Save to localStorage after removal
+    saveIngredientsToStorage();
 }
 
 function performSearch() {
