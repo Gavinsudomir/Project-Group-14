@@ -42,6 +42,155 @@ function createHomePage() {
                     </div>
                 </div>
             </div>
+            
+            <!-- Featured Recipes Section -->
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center mb-5">Featured Recipes</h2>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.budgetbytes.com/classic-homemade-meatloaf/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/classic-meatloaf.jpg" alt="Classic Meatloaf" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Classic Meatloaf</h5>
+                                                <p class="card-text text-muted">American Comfort Food</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Classic Meatloaf</h5>
+                                                <p class="card-text">A hearty and comforting American classic made with ground beef, breadcrumbs, and a delicious glaze. Perfect for family dinners and budget-friendly meals.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$15 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">American</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.budgetbytes.com/chicken-enchiladas/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/Chicken-Enchiladas.jpeg" alt="Chicken Enchiladas" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Chicken Enchiladas</h5>
+                                                <p class="card-text text-muted">Mexican Delight</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Chicken Enchiladas</h5>
+                                                <p class="card-text">Tender shredded chicken wrapped in tortillas, smothered in enchilada sauce and cheese. A flavorful Mexican dish that's perfect for any occasion.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$25 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">Mexican</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.budgetbytes.com/classic-baked-ziti/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/baked-ziti.jpg" alt="Baked Ziti" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Classic Baked Ziti</h5>
+                                                <p class="card-text text-muted">Italian Comfort</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Classic Baked Ziti</h5>
+                                                <p class="card-text">A delicious Italian pasta dish with ziti noodles, marinara sauce, ricotta cheese, and mozzarella. Baked to perfection for a comforting meal.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$25 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">Italian</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.recipetineats.com/chicken-pad-thai/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/Chicken-Pad-Thai.webp" alt="Chicken Pad Thai" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Chicken Pad Thai</h5>
+                                                <p class="card-text text-muted">Thai Street Food</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Chicken Pad Thai</h5>
+                                                <p class="card-text">Authentic Thai stir-fried noodles with chicken, bean sprouts, and peanuts in a tangy tamarind sauce. A perfect balance of sweet, sour, and savory flavors.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$25 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">Thai</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.mediterraneanliving.com/mediterranean-bowl-with-hummus-and-feta/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/Mediterranean-Hummus-Bowl.jpg" alt="Mediterranean Bowl" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Mediterranean Bowl</h5>
+                                                <p class="card-text text-muted">Healthy & Fresh</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Mediterranean Bowl</h5>
+                                                <p class="card-text">A nutritious bowl packed with hummus, feta cheese, fresh vegetables, and Mediterranean flavors. Light, healthy, and absolutely delicious.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$25 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">Mediterranean</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="flip-card" onclick="openRecipeLink('https://www.allrecipes.com/recipe/23298/egg-fried-rice/')">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img src="./imgs/egg-fried-rice.webp" alt="Egg Fried Rice" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Egg Fried Rice</h5>
+                                                <p class="card-text text-muted">Quick & Easy</p>
+                                            </div>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <div class="card-body d-flex flex-column justify-content-center h-100">
+                                                <h5 class="card-title">Egg Fried Rice</h5>
+                                                <p class="card-text">A simple yet satisfying Chinese dish with fluffy rice, scrambled eggs, and vegetables. Quick to make and perfect for using leftover rice.</p>
+                                                <div class="mt-auto">
+                                                    <span class="badge bg-primary">$15 Budget</span>
+                                                    <span class="badge bg-secondary ms-2">Chinese</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     `;
 }
@@ -711,5 +860,15 @@ function saveBudget() {
 function resetBudget() {
     document.getElementById('currentBudget').textContent = '100.00';
     document.getElementById('spentAmount').textContent = '0.00';
+}
+
+// Featured Recipes Functions
+function openRecipeLink(url) {
+    if (url) {
+        window.open(url, '_blank');
+        showToast('Opening recipe in new tab!', 'success');
+    } else {
+        showToast('Recipe link not available', 'warning');
+    }
 }
 
